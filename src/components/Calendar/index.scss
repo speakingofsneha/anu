@@ -1,0 +1,146 @@
+.react-calendar {
+  // Styles for the calendar container
+  flex: unset !important; // Unsetting flex property
+  display: flex; // Setting display to flex
+  flex-direction: column; // Setting flex direction to column
+  width: fit-content; // Setting width to fit content
+  padding: 4px; // Adding padding
+  border: 2px solid #CDC7CE; // Adding border
+  border-radius: 8px; // Adding border radius
+  cursor: default; // Setting cursor to default
+  
+  // glassmorphism effect
+  background-color: rgba(93, 94, 99, 0.7); // Setting background color with alpha transparency
+  backdrop-filter: blur(5px); // Applying backdrop filter with blur effect
+
+  // Navigation section styles
+  &__navigation {
+    display: flex; // Setting display to flex
+    width: 100%; // Setting width to 100%
+    align-items: center; // Aligning items to center
+    justify-content: space-between; // Justifying content with space between
+    gap: 16px; // Adding gap between items
+    padding: 8px 16px; // Adding padding
+
+    // Arrow styles
+    &__arrow {
+      width: 32px; // Setting width
+      height: 32px; // Setting height
+      border-radius: 8px; // Adding border radius
+      color: #FFFFFF; // Setting color
+      cursor: default !important; // Setting cursor to default
+      transition: background-color 0.25s ease-in-out; // Adding transition
+    }
+
+    // Hover effect for arrows
+    :hover {
+      background-color: rgba(0, 0, 0, 0.05) !important; // Hover effect background color
+    }
+
+    // Label styles
+    &__label {
+      pointer-events: none !important; // Disabling pointer events
+      display: flex; // Setting display to flex
+      border-radius: 8px; // Adding border radius
+      overflow: hidden; // Handling overflow
+      font-size: 12px; // Setting font size
+      color: #FFFFFF; // Setting color
+      white-space: nowrap; // Handling white space
+
+      span {
+        width: 100%; // Setting width to 100%
+        height: 100%; // Setting height to 100%
+        padding: 4px 0; // Adding padding
+      }
+    }
+  }
+
+  // Weekday styles
+  &__month-view__weekdays {
+    display: flex; // Setting display to flex
+    justify-content: space-between; // Justifying content with space between
+    text-align: center; // Setting text alignment to center
+    text-transform: capitalize; // Transforming text to capitalize
+    font-weight: 500; // Setting font weight
+    font-size: 12px; // Setting font size
+    padding: 8px; // Adding padding
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); // Adding border bottom
+    color: #D3D4D7; // Setting color
+
+    &__weekday {
+      text-align: center; // Setting text alignment to center
+
+      abbr {
+        text-decoration: none; // Removing text decoration
+      }
+    }
+  }
+
+  // Days container styles
+  &__month-view__days {
+    flex: unset !important; // Unsetting flex property
+    display: grid !important; // Setting display to grid
+    grid-template-columns: repeat(7, 1fr) !important; // Setting grid template columns
+    width: 100%; // Setting width to 100%
+    padding: 12px 8px; // Adding padding
+    gap: 8px; // Adding gap between items
+    color: #FFFFFF; // Setting color
+  }
+
+  // Day tile styles
+  &__tile {
+    display: flex; // Setting display to flex
+    flex: unset !important; // Unsetting flex property
+    width: 32px !important; // Setting width
+    height: 32px !important; // Setting height
+    font-size: 12px; // Setting font size
+    cursor: default !important; // Setting cursor to default
+    transition: background-color 0.25s ease-in-out; // Adding transition
+    overflow: hidden; // Handling overflow
+    border-radius: 8px; // Adding border radius
+
+    // Hover effect for the day tiles
+    :hover {
+      background-color: rgba(0, 0, 0, 0.05); // Hover effect background color
+    }
+
+    abbr {
+      display: flex; // Setting display to flex
+      width: 32px !important; // Setting width
+      height: 32px !important; // Setting height
+      align-items: center; // Aligning items to center
+      justify-content: center; // Justifying content to center
+      border-radius: 8px; // Adding border radius
+      overflow: hidden; // Handling overflow
+      text-decoration: none; // Removing text decoration
+      transition: background-color 0.25s ease-in-out; // Adding transition
+    }
+
+    // Styles for the current day
+    &--now {
+      border: 2px solid #50E0FF !important; // Adding border for current day
+      border-radius: 8px; // Adding border radius
+      font-weight: 500; // Setting font weight
+      color: #50E0FF; // Setting color
+    }
+
+    // Styles for days with active events
+    &--hasActive {
+      border-radius: 8px; // Adding border radius
+      color: red; // Setting color
+    }
+
+    // Styles for the active day
+    &--active {
+      border-radius: 8px; // Adding border radius
+      background: #50E0FF !important; // Adding background color for active day
+      font-weight: 500; // Setting font weight
+      color: #50E0FF; // Setting color
+    }
+  }
+
+  // Styles for days from neighboring months
+  &__month-view__days__day--neighboringMonth {
+    color: #cccccc !important; // Setting color for days from neighboring months
+  }
+}

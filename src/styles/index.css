@@ -1,0 +1,24 @@
+/* Importing the Apercu font from an online source */
+@import url("https://db.onlinewebfonts.com/c/cc63ce6e304da54106961b31a1d744a9?family=Apercu");
+
+/* Importing Tailwind CSS styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply box-sizing, margin, and padding reset to all elements */
+* {
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+/* Apply the Apercu font to the body element */
+body {
+  font-family: "Apercu"; 
+}
+
+/* Hide the scrollbar for elements with the class 'hide-scrollbar' in WebKit browsers */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar in WebKit browsers like Chrome and Safari */
+}
